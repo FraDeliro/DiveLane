@@ -8,4 +8,7 @@ before_install:
 script:
   - xcodebuild -scheme DiveLane -workspace DiveLane.xcworkspace -sdk iphonesimulator build test
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+ notifications:
+  email:
+    on_success: never # [always|never|change]
+    on_failure: change # [always|never|change] - bash <(curl -s https://codecov.io/bash)
